@@ -1,0 +1,25 @@
+## home.html
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>Create Post</h4>
+<form method="post">
+    {% csrf_token %}
+    <textarea name="content" class="form-control mb-2" placeholder="What's on your mind?"></textarea>
+    <button class="btn btn-primary">Post</button>
+</form>
+
+<hr>
+
+<h4>Feed</h4>
+{% for post in posts %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h6>{{ post.user.username }}</h6>
+        <p>{{ post.content }}</p>
+        <small>{{ post.created_at }}</small>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
