@@ -1,26 +1,59 @@
 # Social Media Platform
 
-A full-stack social media platform built using Django and Django REST Framework that allows users to connect, share posts, like, comment, and receive notifications in real time.
+A full-stack Django social media platform with authentication, posts, likes, comments, notifications, and friend system.
 
 
 ## Features
-- User Authentication (JWT)
-- User Profiles
-- Create, Update & Delete Posts
-- Like & Comment on Posts
-- Friend Request System
-- Notifications (Read / Unread)
-- RESTful APIs with Swagger Documentation
-- Secure API Access
+- User authentication (login, logout)
+- Create, edit, delete posts
+- Like and comment on posts
+- Friend system & notifications
+- REST API with Swagger documentation
 
 
-## Tech Stack
-- Backend: Django, Django REST Framework
-- Frontend: React (Planned)
-- Database: PostgreSQL / SQLite
-- Authentication: JWT
-- API Docs: Swagger (drf-yasg)
+## Technologies Used
+- Python 3.x
+- Django + Django REST Framework
+- HTML, CSS (Django Templates)
+- SQLite/PostgreSQL
+- Swagger/OpenAPI
 - Deployment: Render
+
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Srija-Akula/Social-Media-Platform.git
+   cd Social-Media-Platform
+2. Create and activate virtual environment:
+
+    # Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Mac/Linux
+python3 -m venv venv
+source venv/bin/activate
+
+3. Install dependencies:
+
+    pip install -r requirements.txt
+
+4. Configure environment variables:
+
+    cp .env.example .env   # Mac/Linux
+    copy .env.example .env # Windows
+
+5. Apply migrations:
+
+    python manage.py migrate
+
+6. Run the development server:
+
+    python manage.py runserver
+
+7. open in browser:
+
+      
 
 
 ## Project Structure
