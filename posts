@@ -29,3 +29,11 @@ class Like(models.Model):
 
     class Meta:
         unique_together = ('user', 'post')
+
+## Search Posts
+
+from rest_framework.filters import SearchFilter
+
+filter_backends = [SearchFilter]
+search_fields = ['content']
+
