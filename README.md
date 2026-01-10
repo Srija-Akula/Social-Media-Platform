@@ -31,3 +31,16 @@ python manage.py test
 - CI/CD deployment to Render/Heroku
 - Rate limiting & security hardening
 
+### Sample API Response
+GET /api/posts/
+
+[
+  {
+    "id": 12,
+    "author": "srija",
+    "content": "Hello world!",
+    "likes_count": 5
+  }
+]
+
+
