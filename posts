@@ -1,0 +1,31 @@
+
+##  **Pagination (COPY–PASTE)**
+
+ `posts/views.py`
+
+```python
+from rest_framework.pagination import PageNumberPagination
+
+class PostPagination(PageNumberPagination):
+    page_size = 10
+
+ class PostViewSet(ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    pagination_class = PostPagination
+
+## Permissions
+    from rest_framework.permissions import IsAuthenticated
+
+class PostViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
+
+
+## Like Model
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('user', 'post')
