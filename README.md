@@ -1,48 +1,79 @@
-# Social-Media-Platform
-Social Media Platform — Django REST backend for a social media app with user authentication, posts, likes, comments, friend system, and real-time notifications.
-Interactive API documentation with Swagger, clean modular design, and test coverage; ready for React frontend integration and full-stack deployment.
+# Social Media Platform
 
+A full-stack social media platform built using Django and Django REST Framework that allows users to connect, share posts, like, comment, and receive notifications in real time.
 
-[![CI](https://github.com/username/Project-2/actions/workflows/django-ci.yml/badge.svg)](https://github.com/username/Project-2/actions)
 
 ## Features
-- User registration/login with JWT
-- Posts: create, like, comment
-- Friend system & notifications
-- REST API with Swagger docs
-- Fully tested backend
+- User Authentication (JWT)
+- User Profiles
+- Create, Update & Delete Posts
+- Like & Comment on Posts
+- Friend Request System
+- Notifications (Read / Unread)
+- RESTful APIs with Swagger Documentation
+- Secure API Access
 
-## API Docs
-Visit [Swagger UI](http://localhost:8000/swagger/) for interactive API documentation.
 
-## Setup
-1. Clone repo
-2. Copy `.env.example` to `.env` and set your secrets
-3. Install dependencies
+## Tech Stack
+- Backend: Django, Django REST Framework
+- Frontend: React (Planned)
+- Database: PostgreSQL / SQLite
+- Authentication: JWT
+- API Docs: Swagger (drf-yasg)
+- Deployment: Render
+
+
+## Project Structure
+
+Social-Media-Platform/
+│
+├── accounts/
+├── posts/
+├── comments/
+├── notifications/
+├── social_media/
+├── manage.py
+├── requirements.txt
+├── .env.example
+└── README.md
+
+
+
+## Installation & Setup
+```bash
+git clone https://github.com/Srija-Akula/Social-Media-Platform.git
+cd Social-Media-Platform
 pip install -r requirements.txt
-4. Run migrations:
 python manage.py migrate
-5. Run server:
 python manage.py runserver
 
-## Testing
-python manage.py test
+## API Documentation
 
-## Future Improvements
-- Add React frontend (already scaffolded)
-- CI/CD deployment to Render/Heroku
-- Rate limiting & security hardening
+Swagger UI
 
-### Sample API Response
-GET /api/posts/
+## Database Design
 
-[
-  {
-    "id": 12,
-    "author": "srija",
-    "content": "Hello world!",
-    "likes_count": 5
-  }
-]
+User → Post (One-to-Many)
 
+Post → Comment (One-to-Many)
 
+User ↔ User (Friendship)
+
+User → Notification (One-to-Many)
+
+## Future Enhancements
+
+React Frontend
+
+Real-Time Notifications (WebSockets)
+
+Profile Picture Upload
+
+Rate Limiting & Security Improvements
+
+Docker Support
+
+Author
+
+Srija Akula
+https://github.com/Srija-Akula
