@@ -1,0 +1,33 @@
+import React, { useEffect, useState } from "react";
+
+export default function Feed() {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async () => {
+    const res = await fetch("http://localhost:8000/api/posts/");
+    const data = await res.json();
+    setPosts(data);
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  const likePost = async (id) => {
+    await fetch(`http://localhost:8000/api/posts/${id}/like/`, { method: "POST" });
+    fetchPosts();
+  };
+
+  return (
+    <div>
+      <h2>Feed</h2>
+      {posts.map((post) => (
+        <div key={post.id} style={{ border: "1px solid #ccc", padding: "8px", margin: "5px" }}>
+          <p>{post.author}: {post.content}</p>
+          <p>Likes: {post.likes_count}</p>
+          <button onClick={() => likePost(post.id)}>Like</button>
+        </div>
+      ))}
+    </div>
+  );
+}
