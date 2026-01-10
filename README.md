@@ -108,7 +108,7 @@ Docker Support
 
 ## live demo
 https://django-project-3--srijaakula200.replit.app(sample )
-
+https://dashboard.render.com/d/dpg-d5fllrili9vc738re1q0-a
 
 Author
 
