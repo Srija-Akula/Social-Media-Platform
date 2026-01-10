@@ -29,3 +29,20 @@ class SocialMediaTests(APITestCase):
         response = self.client.post(self.comment_url, {"post": post.id, "content": "Nice!"})
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Comment.objects.count(), 1)
+
+## Basic Test Case
+## posts/tests.py
+
+from rest_framework.test import APITestCase
+from django.contrib.auth.models import User
+
+class PostTest(APITestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user(username="test", password="12345")
+        self.client.login(username="test", password="12345")
+
+    def test_create_post(self):
+        response = self.client.post('/api/posts/', {'content': 'Hello World'})
+        self.assertEqual(response.status_code, 201)
+
