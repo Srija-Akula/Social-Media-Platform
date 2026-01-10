@@ -16,4 +16,18 @@ Visit [Swagger UI](http://localhost:8000/swagger/) for interactive API documenta
 ## Setup
 1. Clone repo
 2. Copy `.env.example` to `.env` and set your secrets
-3. Install dependencies:
+3. Install dependencies
+pip install -r requirements.txt
+4. Run migrations:
+python manage.py migrate
+5. Run server:
+python manage.py runserver
+
+## Testing
+python manage.py test
+
+## Future Improvements
+- Add React frontend (already scaffolded)
+- CI/CD deployment to Render/Heroku
+- Rate limiting & security hardening
+
