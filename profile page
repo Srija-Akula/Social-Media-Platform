@@ -1,0 +1,16 @@
+## profile.html
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>{{ user.username }}'s Profile</h3>
+<p>Total Posts: {{ posts.count }}</p>
+
+{% for post in posts %}
+<div class="card mb-2">
+    <div class="card-body">
+        {{ post.content }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
