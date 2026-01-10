@@ -1,1 +1,19 @@
 # Social-Media-Platform
+
+
+[![CI](https://github.com/username/Project-2/actions/workflows/django-ci.yml/badge.svg)](https://github.com/username/Project-2/actions)
+
+## Features
+- User registration/login with JWT
+- Posts: create, like, comment
+- Friend system & notifications
+- REST API with Swagger docs
+- Fully tested backend
+
+## API Docs
+Visit [Swagger UI](http://localhost:8000/swagger/) for interactive API documentation.
+
+## Setup
+1. Clone repo
+2. Copy `.env.example` to `.env` and set your secrets
+3. Install dependencies:
