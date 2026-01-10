@@ -1,4 +1,6 @@
 # Social-Media-Platform
+Social Media Platform — Django REST backend for a social media app with user authentication, posts, likes, comments, friend system, and real-time notifications.
+Interactive API documentation with Swagger, clean modular design, and test coverage; ready for React frontend integration and full-stack deployment.
 
 
 [![CI](https://github.com/username/Project-2/actions/workflows/django-ci.yml/badge.svg)](https://github.com/username/Project-2/actions)
