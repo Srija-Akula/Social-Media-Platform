@@ -1,22 +1,31 @@
-test_api.py
-
 from rest_framework.test import APITestCase
 from django.urls import reverse
 from rest_framework import status
 from django.contrib.auth.models import User
+from api.models import Post, Comment
 
-class UserAuthTests(APITestCase):
+class SocialMediaTests(APITestCase):
+
     def setUp(self):
-        self.register_url = reverse('register')
-        self.login_url = reverse('login')
+        self.user = User.objects.create_user(username='alex', password='StrongPass123')
+        self.client.login(username='alex', password='StrongPass123')
+        self.post_url = reverse('posts-list')  # your DRF viewset url
+        self.comment_url = reverse('comments-list')
 
-    def test_register_user(self):
-        data = {"username": "testuser", "password": "StrongPass123"}
-        response = self.client.post(self.register_url, data)
+    def test_create_post(self):
+        response = self.client.post(self.post_url, {"content": "Hello World!"})
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Post.objects.count(), 1)
 
-    def test_login_user(self):
-        User.objects.create_user(username="testuser", password="StrongPass123")
-        data = {"username": "testuser", "password": "StrongPass123"}
-        response = self.client.post(self.login_url, data)
+    def test_like_post(self):
+        post = Post.objects.create(author=self.user, content="Hi")
+        like_url = reverse('posts-like', kwargs={'pk': post.id})
+        response = self.client.post(like_url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(post.likes.count(), 1)
+
+    def test_comment_post(self):
+        post = Post.objects.create(author=self.user, content="Hi")
+        response = self.client.post(self.comment_url, {"post": post.id, "content": "Nice!"})
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Comment.objects.count(), 1)
