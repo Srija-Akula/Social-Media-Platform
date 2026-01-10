@@ -1,0 +1,33 @@
+## Home feed.py
+
+from django.core.management.base import BaseCommand
+from django.contrib.auth.models import User
+from api.models import Post, Comment, Notification
+
+class Command(BaseCommand):
+    help = 'Display social media home feed'
+
+    def handle(self, *args, **kwargs):
+        user = User.objects.first()  # or get logged-in user dynamically
+        print("SOCIAL MEDIA PLATFORM - HOME PAGE")
+        print("="*35)
+        print(f"\n👤 Welcome back, {user.username}!")
+        print("📢 What's on your mind?")
+        print("[Share your thoughts...]")
+        print("[Upload Image] [Post]\n")
+
+        print("📰 FEED:\n")
+        posts = Post.objects.all().order_by('-created_at')[:5]
+        for post in posts:
+            print(f"💼 {post.author.username} - {post.created_at.strftime('%H:%M %p')}")
+            print(post.content)
+            print(f"👍 {post.likes.count()} Likes | 💬 {post.comments.count()} Comments | 🔄 Share\n")
+            print("💬 Comments:")
+            for comment in post.comments.all():
+                print(f"- {comment.author.username}: {comment.content}")
+            print()
+
+        # Similar logic for notifications, who to follow, stats
+        print("👥 WHO TO FOLLOW: ...")
+        print("🔔 NOTIFICATIONS: ...")
+        print("📊 STATS: ...")
