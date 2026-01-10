@@ -106,6 +106,10 @@ Rate Limiting & Security Improvements
 
 Docker Support
 
+## live demo
+https://django-project-3--srijaakula200.replit.app(sample )
+
+
 Author
 
 Srija Akula
