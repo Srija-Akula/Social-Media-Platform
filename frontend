@@ -1,0 +1,8 @@
+## Templates
+templates/
+│
+├── base.html
+├── login.html
+├── register.html
+├── home.html
+├── profile.html
