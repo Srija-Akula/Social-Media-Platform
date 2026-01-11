@@ -1,116 +1,106 @@
-# Social Media Platform
+##Social Media Platform
 
-A full-stack Django social media platform with authentication, posts, likes, comments, notifications, and friend system.
-
+A full-stack Social Media Platform built using Django and Django REST Framework, featuring user authentication, posts, likes, comments, friend system, and notifications. This project demonstrates real-world web application development with both backend APIs and frontend templates.
 
 ## Features
-- User authentication (login, logout)
-- Create, edit, delete posts
-- Like and comment on posts
-- Friend system & notifications
-- REST API with Swagger documentation
 
+1. User Authentication (Register, Login, Logout)
+2. User Profiles
+3. Create, Edit, Delete Posts
+4. Like &  Comment on Posts
+ 5.Friend Request System
+ 6.Notifications
+ 7.REST APIs with Swagger Documentation
+ 8.Django Templates for Frontend UI
 
-## Technologies Used
-- Python 3.x
-- Django + Django REST Framework
-- HTML, CSS (Django Templates)
-- SQLite/PostgreSQL
-- Swagger/OpenAPI
-- Deployment: Render
+ ##Tech Stack
 
-## Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Srija-Akula/Social-Media-Platform.git
-   cd Social-Media-Platform
-2. Create and activate virtual environment:
+Backend
+Python
+Django
+Django REST Framework
+Frontend
+HTML
+CSS
+Bootstrap
+Database
+postgree 
+Tools
+Render
+Swagger / OpenAPI
+Git & GitHub
 
-    # Windows
-python -m venv venv
-venv\Scripts\activate
-
-# Mac/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-3. Install dependencies:
-
-    pip install -r requirements.txt
-
-4. Configure environment variables:
-
-    cp .env.example .env   # Mac/Linux
-    copy .env.example .env # Windows
-
-5. Apply migrations:
-
-    python manage.py migrate
-
-6. Run the development server:
-
-    python manage.py runserver
-
-7. open in browser:
-
-      
-
-
-## Project Structure
-
+##  Project Structure
 Social-Media-Platform/
 │
-├── accounts/
-├── posts/
-├── comments/
-├── notifications/
-├── social_media/
+├── accounts/        # User authentication & profiles
+├── posts/           # Posts, likes, comments
+├── notifications/   # Notifications logic
+├── templates/       # HTML templates
+├── static/          # CSS & static files
 ├── manage.py
-├── requirements.txt
-├── .env.example
-└── README.md
+└── requirements.txt
 
+ ##Installation & Setup
 
+Follow these steps to run the project locally:
 
-## Installation & Setup
-```bash
+1. Clone the repository
 git clone https://github.com/Srija-Akula/Social-Media-Platform.git
 cd Social-Media-Platform
+
+2. Create virtual environment
+python -m venv venv
+venv\Scripts\activate   # Windows
+source venv/bin/activate  # Mac/Linux
+
+3. Install dependencies
 pip install -r requirements.txt
+
+4. Apply migrations
+python manage.py makemigrations
 python manage.py migrate
+
+5. Create superuser
+python manage.py createsuperuser
+
+6. Run the server
 python manage.py runserver
+
+
+Visit  http://127.0.0.1:8000/
 
 ## API Documentation
 
-Swagger UI
+Swagger API documentation is available at:
 
-## Database Design
+http://127.0.0.1:8000/swagger/
 
-User → Post (One-to-Many)
+## Testing
 
-Post → Comment (One-to-Many)
+Run tests using:
 
-User ↔ User (Friendship)
-
-User → Notification (One-to-Many)
+python manage.py test
 
 ## Future Enhancements
 
-React Frontend
+1. Profile picture & post image uploads
 
-Real-Time Notifications (WebSockets)
+2. Real-time notifications (WebSockets)
 
-Profile Picture Upload
+3. Search users & posts
 
-Rate Limiting & Security Improvements
+4. Responsive UI improvements
 
-Docker Support
+5. Deployment on Render / Railway
 
-## live demo
-https://django-project-3--srijaakula200.replit.app(sample )
-https://dashboard.render.com/d/dpg-d5fllrili9vc738re1q0-a
+6. More unit & API tests
 
-Author
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Contact
 
 Srija Akula
-https://github.com/Srija-Akula
+GitHub: https://github.com/Srija-Akula
